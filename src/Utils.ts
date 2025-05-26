@@ -27,4 +27,11 @@ export default class Utils {
             return value;
         throw new Error(`${key} is not in env variables!`)
     }
+
+    static getEnvOrDefault(key: string, defaultValue: string): string {
+        const value = process.env[key]
+        if (value)
+            return value;
+        return defaultValue;
+    }
 }
